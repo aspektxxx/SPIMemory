@@ -104,15 +104,9 @@ bool SPIFlash::_addressCheck(uint32_t _addr, uint32_t size)
     // Serial.print(F("_chip.capacity: "));
     // Serial.println(_chip.capacity, HEX);
 
-    // Serial.print(F("_addr: "));
-    // Serial.println(_addr, HEX);
-
-    // Serial.print(F("size: "));
-    // Serial.println(size, HEX);
-
     if (_submittedAddress + size > _chip.capacity) {
-        Serial.print(F("_submittedAddress + size: "));
-        Serial.println(_submittedAddress + size, HEX);
+        // Serial.print(F("_submittedAddress + size: "));
+        // Serial.println(_submittedAddress + size, HEX);
         #ifdef DISABLEOVERFLOW
         _troubleshoot(OUTOFBOUNDS);
         return false; // At end of memory - (!pageOverflow)
