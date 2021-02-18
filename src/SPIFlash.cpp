@@ -1209,11 +1209,8 @@ bool SPIFlash::eraseSection(uint32_t _addr, uint32_t _sz)
     uint32_t noOfEraseRunsB4Boundary = 0;
     uint32_t noOf4KBEraseRuns, KB64Blocks, KB32Blocks, KB4Blocks, totalBlocks;
 
-    if (_sz / KB(4)) {
-        noOf4KBEraseRuns = _sz / KB(4);
-    } else {
-        noOf4KBEraseRuns = 1;
-    }
+    noOf4KBEraseRuns = _sz / KB(4) + 1;
+    
     KB64Blocks  = noOf4KBEraseRuns / 16;
     KB32Blocks  = (noOf4KBEraseRuns % 16) / 8;
     KB4Blocks   = (noOf4KBEraseRuns % 8);
