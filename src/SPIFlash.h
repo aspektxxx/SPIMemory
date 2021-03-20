@@ -431,11 +431,11 @@ SPIFlash::_write(uint32_t _addr, const T& value, uint32_t _sz, bool errorCheck)
     if (!SPIBusState) {
         _startSPIBus();
     }
+    CHIP_SELECT
+    _nextByte(PAGEPROG);
+    _transferAddress();
 
     if (maxBytes > length) {
-        CHIP_SELECT
-        _nextByte(PAGEPROG);
-        _transferAddress();
         for (uint16_t i = 0; i < length; ++i) {
             _nextByte(*p++);
         }
