@@ -215,6 +215,7 @@ extern "C" char * sbrk(int i);
 #define WINBOND_MANID        0xEF
 #define W25Q80BV             0x14 // 1 MB
 #define W25Q16BV             0x15 // 2 MB
+#define W25Q32BV             0x16 // 4 MB
 #define W25Q64BV             0x17 // 8 MB // Same for W25Q64FV, W25Q64JV
 #define W25Q256FV            0x19 // 32 MB
 

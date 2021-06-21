@@ -371,6 +371,12 @@ bool SPIFlash::_idWinbond(void)
 
             break;
 
+        case W25Q32BV:
+            _chip.capacity = MB(4);
+            return true;
+
+            break;
+
         case W25Q64BV:
             _chip.capacity = MB(8);
             return true;

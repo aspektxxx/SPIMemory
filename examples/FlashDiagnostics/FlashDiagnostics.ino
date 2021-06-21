@@ -71,10 +71,66 @@ void setup() {
   Serial.println(" µS");
 
   Serial.println();
+
+//SPI.setDataMode(SPI_MODE0);
+//  SPI.setBitOrder(MSBFIRST);
+//  SPI.begin();
+//  delay(5);
+//  digitalWrite(SS, LOW);
+//  SPI.transfer(0xAB);
+//  digitalWrite(SS, HIGH);
+//delay(5);
+//   digitalWrite(SS, LOW);
+//  SPI.transfer(0x06);
+//  digitalWrite(SS, HIGH);
+//
+//
+//  delay(5);
+//   digitalWrite(SS, LOW);
+//  SPI.transfer(0x05);
+//  digitalWrite(SS, HIGH);
+//
+//
+//  delay(5);
+//   digitalWrite(SS, LOW);
+//  SPI.transfer(0x0);
+//  digitalWrite(SS, HIGH);
+//
+//  delay(5);
+//   digitalWrite(SS, LOW);
+//  SPI.transfer(0x05);
+//  digitalWrite(SS, HIGH);
+//
+//  delay(5);
+//   digitalWrite(SS, LOW);
+//  SPI.transfer(0x0);
+//  digitalWrite(SS, HIGH);
+//
+//  delay(5);
+//   digitalWrite(SS, LOW);
+//  SPI.transfer(0x05);
+//  digitalWrite(SS, HIGH);
+//
+//  delay(5);
+//   digitalWrite(SS, LOW);
+//  SPI.transfer(0x0);
+//  digitalWrite(SS, HIGH);
+//
+//delay(5);
+//
+//   digitalWrite(SS, LOW);
+//  SPI.transfer(0x11);
+//  SPI.transfer(0x00);
+//  digitalWrite(SS, HIGH);
+//
+//delay(5);
+//flash.setClock(SPI_CLOCK_DIV128);
   
   flash.begin();
   //To use a custom flash memory size (if using memory from manufacturers not officially supported by the library) - declare a size variable according to the list in defines.h
-  //flash.begin(MB(32));
+  //flash.begin(MB(4));
+
+//flash._checkStatus();
 
   if (getID()) {
 
@@ -98,6 +154,14 @@ void setup() {
     Serial.println();
 
     eraseChipTest();
+
+
+//for (size_t i = 0; i < 300; i++)
+//    {
+//        flash._checkStatus();
+//        delay(100);
+//    }
+    
     Serial.println();
     eraseSectionTest();
     Serial.println();
